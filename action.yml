@@ -1,5 +1,5 @@
 name: karmor-installer
-author: kranurag78
+author: kranurag7
 description: "Install karmor CLI in a GitHub environment"
 branding:
   icon: 'shield'

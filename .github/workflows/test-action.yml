@@ -20,7 +20,7 @@ jobs:
         run: |
           echo $karmor_version
       - name: Install karmor
-        uses: kranurag78/setup-karmor@main
+        uses: kranurag7/setup-karmor@main
         # with:
         #   karmor_version: 'v0.11.7'
       - name: Run karmor
