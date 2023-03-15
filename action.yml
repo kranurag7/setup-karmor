@@ -1,0 +1,19 @@
+name: karmor-installer
+author: kranurag78
+description: "Install karmor CLI in a GitHub environment"
+branding:
+  icon: 'shield'
+  color: blue
+inputs:
+  karmor_version:
+    description: 'Karmor version to install'
+    required: false
+    default: 'v0.11.7'
+
+runs:
+  using: "composite"
+  steps:
+    - run: ./install.sh
+      env:
+        GH_TOKEN: ${{ github.token }}
+      shell: bash

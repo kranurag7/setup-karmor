@@ -1,0 +1,29 @@
+name: karmor-test-action
+
+on: 
+  pull_request:
+  push:
+    branches:
+      - 'main'
+      - 'test'
+
+jobs:
+  test-karmor:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Checks 
+        run: |
+          echo $karmor_version
+      - name: Install karmor
+        uses: kranurag78/setup-karmor@main
+        # with:
+        #   karmor_version: 'v0.11.7'
+      - name: Run karmor
+        run: |
+          karmor version
+
